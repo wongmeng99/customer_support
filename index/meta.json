@@ -1,0 +1,107 @@
+{
+  "embedding_model": "text-embedding-3-small",
+  "chunks": [
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Password reset",
+      "text": "Password reset\nUse 'Forgot password' on the login screen. A reset link is emailed and expires after 1 hour. Check your spam folder if you don't see it."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Changing email",
+      "text": "Changing email\nEmail changes require verification. A confirmation link is sent to the new address, and a notice goes to the old one. The change is complete after you click the link."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Two-factor authentication",
+      "text": "Two-factor authentication\nEnable 2FA in Settings > Security. If you lose your device, use a backup code. If you have none, contact support for identity verification."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Deleting your account",
+      "text": "Deleting your account\nGo to Settings > Account > Delete account. Deletion is permanent after a 14-day grace period during which you can log in to cancel it."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Locked account",
+      "text": "Locked account\nAfter 5 failed login attempts the account is locked for 15 minutes. Resetting your password unlocks it immediately."
+    },
+    {
+      "category": "billing",
+      "source": "billing.md",
+      "title": "Refunds",
+      "text": "Refunds\nRefunds are processed within 5-7 business days after approval. They return to the original payment method. To request one, go to Settings > Billing > Request refund, or contact support within 30 days of the charge."
+    },
+    {
+      "category": "billing",
+      "source": "billing.md",
+      "title": "Invoices",
+      "text": "Invoices\nInvoices are available in Settings > Billing > Invoices. You can download each one as a PDF. To add a company name or tax ID, edit Billing details before the invoice is generated."
+    },
+    {
+      "category": "billing",
+      "source": "billing.md",
+      "title": "Duplicate or unexpected charges",
+      "text": "Duplicate or unexpected charges\nIf you see a duplicate charge, it is often a temporary authorization hold that drops off within 3-5 business days. If it remains after that, contact support with the date and amount and we will investigate."
+    },
+    {
+      "category": "billing",
+      "source": "billing.md",
+      "title": "Plans and billing cycle",
+      "text": "Plans and billing cycle\nYou can switch between monthly and annual billing in Settings > Billing > Plan. Upgrades take effect immediately with prorated charges. Downgrades take effect at the next renewal date."
+    },
+    {
+      "category": "billing",
+      "source": "billing.md",
+      "title": "Failed payments",
+      "text": "Failed payments\nIf a card is declined, check the card details and that the bank allows online payments. We retry failed payments automatically up to 3 times over 7 days. You can update your card in Settings > Billing > Payment method."
+    },
+    {
+      "category": "general",
+      "source": "general.md",
+      "title": "Contact and hours",
+      "text": "Contact and hours\nSupport is available by chat and email, Monday to Friday, 9am-6pm. Replies usually arrive within one business day."
+    },
+    {
+      "category": "general",
+      "source": "general.md",
+      "title": "Escalation",
+      "text": "Escalation\nFor urgent issues such as security concerns or suspected unauthorized access, mark the ticket as urgent and a human agent will respond as a priority."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "App crashes or freezes",
+      "text": "App crashes or freezes\nClear the app cache, update to the latest version, and restart your device. If the crash continues, reinstall the app and send us the app version and device model."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "Upload errors",
+      "text": "Upload errors\nFiles must be under 100 MB. Supported formats: PDF, PNG, JPG, CSV, DOCX. A 500 error on upload is usually temporary; retry after a few minutes and check the status page."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "Notifications not working",
+      "text": "Notifications not working\nCheck that notifications are enabled in the device system settings and in the app under Settings > Notifications. Disable battery-saver mode for the app, then log out and back in."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "Service status",
+      "text": "Service status\nLive incidents and maintenance are listed at status.example.com. Subscribe there for updates."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "Slow performance",
+      "text": "Slow performance\nCheck your internet connection, close other heavy apps, and update to the latest version. Try a different network to rule out connectivity issues."
+    }
+  ]
+}
