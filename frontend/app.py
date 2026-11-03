@@ -25,7 +25,13 @@ def text_of(msg) -> str:
 
 URL = CLOUD_URL
 url = URL
-api_key = os.getenv("LANGSMITH_API_KEY", "")
+try:
+    api_key = st.secrets.get("LANGSMITH_API_KEY", "")
+except Exception:
+    api_key = ""
+api_key = api_key or os.getenv("LANGSMITH_API_KEY", "")
+if not api_key:
+    st.warning("LANGSMITH_API_KEY is not set. Add it in Streamlit Cloud → Settings → Secrets.")
 assistant = "support_agent"
 
 
