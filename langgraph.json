@@ -1,5 +1,6 @@
 {
   "dependencies": ["."],
   "graphs": {"support_agent": "./src/support_agent/graph.py:graph"},
+  "python_version": "3.12",
   "env": ".env"
 }
