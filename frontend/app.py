@@ -93,24 +93,40 @@ if prompt := st.chat_input("How can we help?"):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    async def ask():
+    async def ask(status):
         c = client()
         if not st.session_state.thread_id:
             th = await c.threads.create()
             st.session_state.thread_id = th["thread_id"]
-        result = await c.runs.wait(
+        reply = ""
+        async for ev in c.runs.stream(
             st.session_state.thread_id,
             assistant,
             input={"messages": [{"role": "user", "content": prompt}]},
-        )
-        return text_of(result["messages"][-1])
+            stream_mode="updates",
+        ):
+            if ev.event != "updates" or not isinstance(ev.data, dict):
+                continue
+            for node, upd in ev.data.items():
+                upd = upd or {}
+                if node == "classify":
+                    if upd.get("category") == "unclear":
+                        status.update(label="Unclear query: asking a human agent on Slack (up to ~30s)…")
+                    else:
+                        status.update(label=f"Routed to {upd.get('category')}, drafting reply…")
+                for m in upd.get("messages") or []:
+                    if m.get("type") == "ai":
+                        reply = text_of(m)
+        return reply or "⚠️ No reply received."
 
     with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
+        with st.status("Thinking…", expanded=False) as status:
             try:
-                reply = run(ask())
+                reply = run(ask(status))
+                status.update(label="Done", state="complete")
             except Exception as e:
                 reply = f"⚠️ Error: {e}"
+                status.update(label="Error", state="error")
         st.markdown(reply)
     st.session_state.messages.append({"role": "assistant", "content": reply})
     st.rerun()

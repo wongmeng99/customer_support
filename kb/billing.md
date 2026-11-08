@@ -12,3 +12,6 @@ You can switch between monthly and annual billing in Settings > Billing > Plan. 
 
 # Failed payments
 If a card is declined, check the card details and that the bank allows online payments. We retry failed payments automatically up to 3 times over 7 days. You can update your card in Settings > Billing > Payment method.
+
+# Price increases
+Your price can go up if your plan changed, you added seats or add-ons, a promotional or trial discount ended, or taxes changed. Upgrades are charged prorated immediately. Check the line items in Settings > Billing > Invoices to see what changed. If the amount still looks wrong, contact support with the invoice date.

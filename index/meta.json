@@ -32,6 +32,30 @@
       "text": "Locked account\nAfter 5 failed login attempts the account is locked for 15 minutes. Resetting your password unlocks it immediately."
     },
     {
+      "category": "account",
+      "source": "account.md",
+      "title": "Adding teammates",
+      "text": "Adding teammates\nGo to Settings > Team > Invite member, enter their email, and choose a role. They receive an invitation link by email. Pending invitations can be resent or revoked from the same page."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Verification email not received",
+      "text": "Verification email not received\nCheck spam and promotions folders and confirm the email address is spelled correctly. In Settings > Account, choose Resend verification email. Links expire after 1 hour. If it still doesn't arrive, add our sender address to your safe list or contact support."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Changing your username",
+      "text": "Changing your username\nGo to Settings > Profile > Username, enter the new name, and save. Usernames must be unique, and you can change yours once every 30 days."
+    },
+    {
+      "category": "account",
+      "source": "account.md",
+      "title": "Can't log in",
+      "text": "Can't log in\nIf you can't log in, use 'Forgot password' on the login screen. After 5 failed attempts the account locks for 15 minutes; resetting your password unlocks it immediately. If the reset email never arrives, check spam, confirm you used your account email, and request a new link (links expire after 1 hour). If it still doesn't arrive, contact support for identity verification."
+    },
+    {
       "category": "billing",
       "source": "billing.md",
       "title": "Refunds",
@@ -60,6 +84,12 @@
       "source": "billing.md",
       "title": "Failed payments",
       "text": "Failed payments\nIf a card is declined, check the card details and that the bank allows online payments. We retry failed payments automatically up to 3 times over 7 days. You can update your card in Settings > Billing > Payment method."
+    },
+    {
+      "category": "billing",
+      "source": "billing.md",
+      "title": "Price increases",
+      "text": "Price increases\nYour price can go up if your plan changed, you added seats or add-ons, a promotional or trial discount ended, or taxes changed. Upgrades are charged prorated immediately. Check the line items in Settings > Billing > Invoices to see what changed. If the amount still looks wrong, contact support with the invoice date."
     },
     {
       "category": "general",
@@ -102,6 +132,30 @@
       "source": "technical.md",
       "title": "Slow performance",
       "text": "Slow performance\nCheck your internet connection, close other heavy apps, and update to the latest version. Try a different network to rule out connectivity issues."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "API timeouts",
+      "text": "API timeouts\nIf the API returns timeouts, check status.example.com for live incidents first. Retry with exponential backoff, confirm your network and firewall allow outbound requests, and reduce request payload size. If timeouts continue, contact support with the endpoint, timestamps, and request IDs."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "Export to CSV is empty",
+      "text": "Export to CSV is empty\nAn empty CSV usually means the active filters or date range return no rows. Clear filters, widen the date range, and export again. Also check that your browser allows downloads and try a different browser. If the file is still empty, contact support with the report name and filters used."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "Page won't load in Safari",
+      "text": "Page won't load in Safari\nUpdate Safari to the latest version, clear website data for our site (Safari > Settings > Privacy > Manage Website Data), disable content blockers and extensions, and reload. If it still fails, try a private window or another browser and send us your Safari version."
+    },
+    {
+      "category": "technical",
+      "source": "technical.md",
+      "title": "App problems and refunds",
+      "text": "App problems and refunds\nIf the app keeps crashing, follow the steps in \"App crashes or freezes\" first. If the problem continues and you want your money back, request a refund in Settings > Billing > Request refund, or contact support within 30 days of the charge. Include your app version and device model so we can also fix the crash."
     }
   ]
 }

@@ -8,6 +8,7 @@ from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
 
 from support_agent.retriever import retrieve
+from support_agent.slack_hitl import ask_human
 
 load_dotenv()
 
@@ -33,7 +34,9 @@ def get_query(state: State) -> str:
     # Latest human message wins; `query` persists in thread state, so it must be only a fallback.
     for m in reversed(state.get("messages", [])):
         if getattr(m, "type", None) == "human":
-            return m.content if isinstance(m.content, str) else str(m.content)
+            if isinstance(m.content, str):
+                return m.content
+            return " ".join(b.get("text", "") for b in m.content if isinstance(b, dict))
     return state.get("query", "")
 
 
@@ -67,7 +70,16 @@ def make_drafter(dept: str):
 
 
 def clarify(state: State) -> State:
-    text = "Thanks for reaching out! Could you share a bit more detail about your issue?"
+    query = get_query(state)
+    human = ask_human(query)
+    if human:
+        text = llm.invoke(
+            "Rewrite this human support agent's reply as a short, friendly message to the customer. "
+            "Keep the meaning exactly; don't add facts or policies.\n\n"
+            f"Customer: {query}\nAgent reply: {human}"
+        ).content
+    else:
+        text = "Sorry, we are unable to reply to you at this moment."
     return {"response": text, "messages": [AIMessage(text)]}
 
 

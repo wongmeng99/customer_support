@@ -6,12 +6,15 @@ dependencies = [
     "faiss-cpu>=1.15.1",
     "langchain>=1.4.7",
     "langchain-openai>=1.7.3",
+    "langchain-typesafe>=0.0.2",
     "langgraph>=1.2.19",
     "langgraph-sdk>=0.4.11",
     "langsmith>=0.14.16",
     "numpy>=2.5.4",
     "python-dotenv>=1.2.4",
+    "slack-sdk>=3.46.0",
     "streamlit>=1.66.1",
+    "typesafe-sdk>=0.7.5",
 ]
 
 [dependency-groups]
