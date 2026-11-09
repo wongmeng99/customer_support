@@ -33,6 +33,7 @@ api_key = api_key or os.getenv("LANGSMITH_API_KEY", "")
 if not api_key:
     st.warning("LANGSMITH_API_KEY is not set. Add it in Streamlit Cloud → Settings → Secrets.")
 assistant = "support_agent"
+UI_META = {"source": "streamlit"}  # evals/other runs lack this tag, so they stay hidden
 
 
 def client():
@@ -40,7 +41,7 @@ def client():
 
 
 def list_threads():
-    return run(client().threads.search(limit=30, sort_by="updated_at", sort_order="desc"))
+    return run(client().threads.search(metadata=UI_META, limit=30, sort_by="updated_at", sort_order="desc"))
 
 
 def load_messages(thread_id):
@@ -96,7 +97,7 @@ if prompt := st.chat_input("How can we help?"):
     async def ask(status):
         c = client()
         if not st.session_state.thread_id:
-            th = await c.threads.create()
+            th = await c.threads.create(metadata=UI_META)
             st.session_state.thread_id = th["thread_id"]
         reply = ""
         async for ev in c.runs.stream(
