@@ -1,6 +1,11 @@
 {
-  "dependencies": ["."],
-  "graphs": {"support_agent": "./src/support_agent/graph.py:graph"},
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "support_agent": "./src/support_agent/graph.py:graph",
+    "exam_booking": "./src/support_agent/booking.py:graph"
+  },
   "python_version": "3.12",
   "env": ".env"
 }
